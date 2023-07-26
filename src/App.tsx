@@ -65,14 +65,13 @@ const App:React.FC = () => {
       />
       <Tabs>
         <TabList>
-          <Tab>Books</Tab>
+          <Tab>Books ({Number(resultCount).toLocaleString()})</Tab>
           <Tab>To Read ({tbrList.length})</Tab>
           <Tab>Read ({readList.length})</Tab>
         </TabList>
 
         <TabPanel>
           <div className={`book_results`}>
-            {resultCount ? (<span className="result_count">Results: {resultCount}</span>) : ''}
             <div className="result_container">
               {resultCount ?
                 results.map((book) => {
@@ -99,7 +98,6 @@ const App:React.FC = () => {
         </TabPanel>
         <TabPanel>
           <div className="to_read_list">
-            {tbrList.length > 0 && <span className="tbr_count">{tbrList.length} books to read</span>}
             <div className="result_container">
             {tbrList.length > 0 ?
               tbrList.map((book) => {
@@ -126,7 +124,6 @@ const App:React.FC = () => {
         </TabPanel>
         <TabPanel>
           <div className="read_list">
-            {readList.length > 0 && <span className="read_count">{readList.length} books read</span>}
             <div className="result_container">
               {readList.length > 0 ?
                 readList.map((book) => {
