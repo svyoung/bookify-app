@@ -1,38 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Oswald:wght@300;400&family=Pacifico&family=Roboto:wght@400;500&display=swap');
+
 .App {
-  text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 600;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.display_none {
+    display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#bookify {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tabs_container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.react-tabs {
+    margin-top: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.react-tabs__tab-list {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+}
+
+.react-tabs__tab-panel--selected  {
+    display: block;
+}
+
+.tab, .react-tabs__tab {
+    background-color: rgba(225, 239, 227, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    margin-right: 10px;
+}
+
+.tab.active, .react-tabs__tab--selected {
+    background-color: rgba(244, 244, 244, 0.8);
+}
+
+
+.content_wrapper, .react-tabs__tab-panel {
+    background-color: rgba(244, 244, 244, 0.8);
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.search_book {
+    border-radius: 20px;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 60%;
+    font-size: 14px;
+    margin: 0 auto;
+    display: block;
+}
+
+.no_results {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(181, 181, 181, 0.8);
+    text-align: center;
+    display: block;
+    margin: 40px auto;
+    font-weight: 200;
+}
+
+.result_count {
+    font-family: 'Oswald', sans-serif;
+    margin-left: 10px;
+}
+
+.result_container {
+    width: 100%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 33%);
+}
+
+.book_container {
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+    margin-top: 20px;
+    width: 350px;
+    transition: 0.2s;
+    cursor: pointer;
+    border: 1px solid rgba(226, 226, 226, 0.8);
+    position: relative;
+}
+
+.book_container:hover {
+    transform: scale(1.05);
+}
+
+/* .book_item:last-child {
+    margin: 0 auto 0 3%;
+} */
+
+.book_image {
+    width: 97px;
+    height: 150px;
+}
+
+.book_image img {
+    /* border-radius: 5px; */
+}
+
+.book_title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.book_author {
+    display: inline-block;
+    border-bottom: 1px solid gray;
+    padding-bottom: 3px;
+    margin-bottom: 5px;;
+    cursor: pointer;
+}
+
+.book_author:hover {
+    border-bottom: none;
+}
+
+.book_subjects {
+    font-size: 11px;
+    display: block;
+    margin-top: 9px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+
+.book_subjects span {
+    display: inline-block;
+    background: rgba(209, 209, 209, 0.8);
+    border-radius: 5px;
+    padding: 4px 7px;
+    margin: 4px;
+}
+
+.book_subjects span:hover {
+    background: rgba(230, 230, 230, 0.8)
+}
+
+.buttons_container {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.button_action {
+    margin: 10px -20px 10px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(121, 121, 121, 0.5);
+}
+
+.button_action.added {
+    box-shadow: 0 0 0 0 rgba(245, 144, 162, 1);
+	animation: pulse-orange 1s infinite;
+}
+
+@keyframes pulse-orange {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(245, 144, 162, 0.7);
+	}
+	
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(245, 144, 162, 0);
+	}
+	
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(245, 144, 162, 0);
+	}
 }

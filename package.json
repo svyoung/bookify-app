@@ -1,5 +1,5 @@
 {
-  "name": "typescript-app",
+  "name": "bookify-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,7 +12,9 @@
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "react-scripts": "5.0.1",
+    "react-tabs": "^6.0.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
