@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 type Props = {
     query: string,
-    setText: React.Dispatch<React.SetStateAction<string>>
+    setQuery: React.Dispatch<React.SetStateAction<string>>
 }
 
-const SearchField = ({ query, setText }: Props) => {
+const SearchField = ({ query, setQuery }: Props) => {
   return (
     <div>
       <input
@@ -13,7 +13,7 @@ const SearchField = ({ query, setText }: Props) => {
         type="query" 
         name="search" 
         value={query} 
-        onChange={(e) => setText(e.currentTarget.value)}
+        onChange={(e) => setQuery(e.currentTarget.value)}
         placeholder="search book (ex. fantasy, Mark Twain, Dune)"
       />
     </div>

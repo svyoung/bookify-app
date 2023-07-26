@@ -9,7 +9,7 @@ let name: string = "Bookify";
 let apiUrl: string = "https://openlibrary.org/search.json?q=";
 
 const App:React.FC = () => {
-  const [query, setText] = useState<string>("");
+  const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<BookModel[]>([]);
   const [resultCount, setResultCount] = useState<number>(0);
   const [tbrList, setTbrList] = useState<BookModel[]>([]);
@@ -41,11 +41,11 @@ const App:React.FC = () => {
     }
   }
 
-  const onTitleClick = (title: string) => setText(`title:${title}`);
+  const onTitleClick = (title: string) => setQuery(`title:${title}`);
 
-  const onSubjectClick = (subject: string) => setText(`subject:${subject}`);
+  const onSubjectClick = (subject: string) => setQuery(`subject:${subject}`);
 
-  const onAuthorClick = (author: string) => setText(`author:${author}`);
+  const onAuthorClick = (author: string) => setQuery(`author:${author}`);
 
   const deleteTBR = (key: string) => setTbrList([...tbrList.filter(b => b.key !== key )]);
 
@@ -61,7 +61,7 @@ const App:React.FC = () => {
       <h1 id="bookify">{name}</h1>
       <SearchField
         query={query} 
-        setText={setText}
+        setQuery={setQuery}
       />
       <Tabs>
         <TabList>
