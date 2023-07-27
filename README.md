@@ -2,7 +2,7 @@
 
 Bookify allows users to search for books and organize them to their "To Read"/"Read" lists. It uses React and TypeScript. There is no database, and refreshing the page will erase all data. Third-party API queries from Open Library and does not require an authentication key.
 
-#### Features include:
+#### Features includex:
 - Search for books
 - Add a book to the "To Read" list/tab
 - Clicking a book's title will automatically search for a book with the same title
