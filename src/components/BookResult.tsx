@@ -38,7 +38,7 @@ const BookResult: React.FC<Props> = ({
     const addTBR = (key: string) => {
             addToTBR(key);
             setPulseActive("added")
-    }
+    };
 
     useEffect(() => {
         // remove pulse animation
@@ -85,6 +85,6 @@ const BookResult: React.FC<Props> = ({
       </div>
     </div>
   )
-}
+};
 
 export default BookResult;

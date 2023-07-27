@@ -39,22 +39,17 @@ const App:React.FC = () => {
       const book = results.filter(res => res.key === key);
       setTbrList([...tbrList, ...book]);
     }
-  }
-
+  };
   const onTitleClick = (title: string) => setQuery(`title:${title}`);
-
   const onSubjectClick = (subject: string) => setQuery(`subject:${subject}`);
-
   const onAuthorClick = (author: string) => setQuery(`author:${author}`);
-
-  const deleteTBR = (key: string) => setTbrList([...tbrList.filter(b => b.key !== key )]);
-
+  const deleteTBR = (key: string) => setTbrList([...tbrList.filter(b => b.key !== key)]);
   const finishedTBR = (key: string) => {
     // delete from TBR list
     deleteTBR(key);
     // add to read list
     setReadList([...readList, ...results.filter(r => r.key === key)]);
-  }
+  };
 
   return (
     <div className="App">
@@ -150,6 +145,6 @@ const App:React.FC = () => {
       </Tabs>
     </div>
   );
-}
+};
 
 export default App;

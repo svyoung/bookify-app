@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 type Props = {
     query: string,
     setQuery: React.Dispatch<React.SetStateAction<string>>
-}
+};
 
 const SearchField = ({ query, setQuery }: Props) => {
   return (
@@ -18,6 +18,6 @@ const SearchField = ({ query, setQuery }: Props) => {
       />
     </div>
   )
-}
+};
 
 export default SearchField;
