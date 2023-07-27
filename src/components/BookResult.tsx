@@ -36,14 +36,14 @@ const BookResult: React.FC<Props> = ({
     });
     
     const addTBR = (key: string) => {
-            addToTBR(key);
-            setPulseActive("added")
+        addToTBR(key);
+        setPulseActive("added");
     };
 
     useEffect(() => {
         // remove pulse animation
         setTimeout(() => setPulseActive(""), 1000);
-      }, [addTBR]);
+    }, [addTBR]);
 
   return (
     <div className="book_container">
