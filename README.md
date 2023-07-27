@@ -1,8 +1,8 @@
 ## About Bookify
 
-This is a simple app for a book search + add book to a To Read list using React and TypeScript. There is no database, and refreshing the page will erase all data.
+This is a simple app for a book search + adding books to a To Read list using React and TypeScript. There is no database, and refreshing the page will erase all data.
 
-Bookify was currently only built for a desktop view.
+Bookify is currently only built for a desktop view.
 
 ### `npm start`
 
