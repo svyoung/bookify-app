@@ -51,7 +51,7 @@ const App:React.FC = () => {
 
   const finishedTBR = (key: string) => {
     // delete from TBR list
-    setTbrList([...tbrList.filter(b => b.key !== key )])
+    deleteTBR(key);
     // add to read list
     setReadList([...readList, ...results.filter(r => r.key === key)]);
   }
@@ -69,7 +69,6 @@ const App:React.FC = () => {
           <Tab>To Read ({tbrList.length})</Tab>
           <Tab>Read ({readList.length})</Tab>
         </TabList>
-
         <TabPanel>
           <div className={`book_results`}>
             <div className="result_container">
