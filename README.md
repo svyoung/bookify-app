@@ -2,7 +2,7 @@
 
 This is a simple app for a book search + adding books to a "To Read" list using React and TypeScript. There is no database, and refreshing the page will erase all data. Third-party API queries from Open Library and does not require authentication key.
 
-#### Functionality includes:
+#### Features includes:
 - Search for books
 - Add a book to the "To Read" list/tab
 - Clicking a book's title will automatically search for a book with the same title
