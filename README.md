@@ -13,6 +13,8 @@ This is a simple app for a book search + adding books to a "To Read" list using 
 
 Bookify is currently only built for a desktop view.
 
+![bookify demo](bookify_demo.gif)
+
 ### `npm start`
 
 Runs the app in the development mode.\
