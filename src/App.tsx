@@ -50,6 +50,14 @@ const App:React.FC = () => {
     // add to read list
     setReadList([...readList, ...results.filter(r => r.key === key)]);
   };
+  const deleteRead = (key: string) => setReadList([...readList.filter(r => r.key !== key)]);
+  const reAddToTBR = (key: string) => {
+    // add it back to To Read
+    addToTBR(key);
+    // remove from Read list
+    deleteRead(key);
+  }
+  
 
   return (
     <div className="App">
@@ -78,9 +86,9 @@ const App:React.FC = () => {
                         onSubjectClick={onSubjectClick} 
                         onAuthorClick={onAuthorClick} 
                         onTitleClick={onTitleClick}
-                        addToTBR={addToTBR}
-                        deleteTBR={deleteTBR}
-                        finishedTBR={finishedTBR}
+                        addClick={addToTBR}
+                        deleteClick={deleteTBR}
+                        finishedClick={finishedTBR}
                       />
                     </div>
                   )
@@ -100,13 +108,13 @@ const App:React.FC = () => {
                     <BookResult 
                       key={book.key} 
                       book={book} 
-                      buttons={["delete", "finished"]} 
+                      buttons={["finished", "delete"]} 
                       onSubjectClick={onSubjectClick} 
                       onAuthorClick={onAuthorClick} 
                       onTitleClick={onTitleClick}
-                      addToTBR={addToTBR}
-                      deleteTBR={deleteTBR}
-                      finishedTBR={finishedTBR}
+                      addClick={() => {}}
+                      deleteClick={deleteTBR}
+                      finishedClick={finishedTBR}
                     />
                   </div>
                 )
@@ -126,18 +134,18 @@ const App:React.FC = () => {
                       <BookResult 
                         key={book.key} 
                         book={book} 
-                        buttons={[]} 
+                        buttons={["add", "delete"]} 
                         onSubjectClick={onSubjectClick} 
                         onAuthorClick={onAuthorClick} 
                         onTitleClick={onTitleClick}
-                        addToTBR={addToTBR}
-                        deleteTBR={deleteTBR}
-                        finishedTBR={finishedTBR}
+                        addClick={reAddToTBR}
+                        deleteClick={deleteRead}
+                        finishedClick={() => {}}
                       />
                     </div>
                   )
                 })
-                : <div className="no_results">You haven't finished reading any books yet</div>
+                : <div className="no_results">You haven't finished reading any book yet</div>
               }
             </div>
           </div>

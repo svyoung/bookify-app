@@ -8,9 +8,9 @@ type Props = {
     onSubjectClick: (val: string) => void,
     onAuthorClick: (val: string) => void,
     onTitleClick: (val: string) => void,
-    addToTBR: (val: string) => void,
-    deleteTBR:  (val: string) => void,
-    finishedTBR:  (val: string) => void,
+    addClick: (val: string) => void,
+    deleteClick:  (val: string) => void,
+    finishedClick:  (val: string) => void,
 }
 
 let coverUrl = "https://covers.openlibrary.org/b/id/";
@@ -21,9 +21,9 @@ const BookResult: React.FC<Props> = ({
     onSubjectClick, 
     onAuthorClick, 
     onTitleClick,
-    addToTBR,
-    deleteTBR,
-    finishedTBR
+    addClick,
+    deleteClick,
+    finishedClick
 }) => {
     const [pulseActive, setPulseActive] = useState<string>("");
     const subjects: string[] = [];
@@ -36,7 +36,7 @@ const BookResult: React.FC<Props> = ({
     });
     
     const addTBR = (key: string) => {
-        addToTBR(key);
+        addClick(key);
         setPulseActive("added");
     };
 
@@ -69,14 +69,14 @@ const BookResult: React.FC<Props> = ({
             }
             if(button === "finished") {
                 return (
-                    <div className="button_action" onClick={() => finishedTBR(book.key)}>
+                    <div className="button_action" onClick={() => finishedClick(book.key)}>
                         <FaCheck size={20} color="#6aa84f" />
                     </div>
                 )
             }
             if(button === "delete") {
                 return (
-                    <div className="button_action" onClick={() => deleteTBR(book.key)}>
+                    <div className="button_action" onClick={() => deleteClick(book.key)}>
                         <FaTrashCan size={20} color="#6aa84f" />
                     </div>
                 )
