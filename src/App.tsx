@@ -15,8 +15,6 @@ const App:React.FC = () => {
   const [tbrList, setTbrList] = useState<BookModel[]>([]);
   const [readList, setReadList] = useState<BookModel[]>([]);
 
-  const toReadList: BookModel[]  = [];
-
   useEffect(() => {
     // query search results
     const timer = setTimeout(() => {
