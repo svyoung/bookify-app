@@ -48,7 +48,8 @@ const App:React.FC = () => {
     // add to read list
     setReadList([...readList, ...results.filter(r => r.key === key)]);
   };
-  const deleteRead = (key: string) => setReadList([...readList.filter(r => r.key !== key)]);
+  const deleteRead = (key: string) => setReadList([...readList.filter(rl => rl.key !== key)])
+
   const reAddToTBR = (key: string) => {
     // add it back to To Read
     addToTBR(key);
@@ -76,7 +77,7 @@ const App:React.FC = () => {
               {resultCount ?
                 results.map((book) => {
                   return (
-                    <div className="book_item" onClick={() => addToTBR(book.key)}>
+                    <div className="book_item">
                       <BookResult 
                         key={book.key} 
                         book={book} 
@@ -102,7 +103,7 @@ const App:React.FC = () => {
             {tbrList.length > 0 ?
               tbrList.map((book) => {
                 return (
-                  <div className="book_item" onClick={() => addToTBR(book.key)}>
+                  <div className="book_item">
                     <BookResult 
                       key={book.key} 
                       book={book} 
@@ -128,7 +129,7 @@ const App:React.FC = () => {
               {readList.length > 0 ?
                 readList.map((book) => {
                   return (
-                    <div className="book_item" onClick={() => addToTBR(book.key)}>
+                    <div className="book_item">
                       <BookResult 
                         key={book.key} 
                         book={book} 
