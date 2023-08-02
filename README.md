@@ -10,6 +10,7 @@ Bookify allows users to search for books and organize them to their "To Read"/"R
 - Clicking on any book's subject will automatically search for books in that subject
 - "To Read" books could be deleted or marked "Done" with a trashcan and checkmark icon
 - "Read" tab lists will show books that have been marked completed
+- Re-adding and deleting a book in the Read list
 
 #### Features to be included:
 - Sorting lists
